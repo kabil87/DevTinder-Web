@@ -49,7 +49,7 @@ const Login = () => {
 
   <input type="text" className="input border border-none" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value) } />
   <p className="text-red-500">{error}</p>
-  <button className="btn btn-neutral mt-4" onClick={handleLogin}>Login</button>
+  <button className="btn btn-active mt-4" onClick={handleLogin}>Login</button>
 </fieldset> 
     </div>
   )
