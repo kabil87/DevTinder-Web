@@ -1,6 +1,7 @@
 import React from 'react'
 import EditProfile from './EditProfile'
 import { useSelector } from 'react-redux';
+import UserCart from './UserCart';
 
 const Profile = () => {
 
@@ -8,8 +9,11 @@ const Profile = () => {
 
   return (
     user &&
-    <div>
+    <div className='flex justify-center gap-40 '>
       <EditProfile user={user} />
+      <div>
+        <UserCart user={user} />
+      </div>
     </div>
   )
 }

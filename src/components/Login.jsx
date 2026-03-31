@@ -8,8 +8,11 @@ import { useNavigate } from "react-router-dom";
 
 const Login = () => {
 
-    const [email,setEmail] = useState("kapil@gmail.com");
-    const [password,setPassword] = useState("Kapil@1234");
+  //"akshay@gmail.com"
+  //"Akshay@1234"
+
+    const [email,setEmail] = useState("akshay@gmail.com");
+    const [password,setPassword] = useState("Akshay@1234");
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [error,setError] = useState();
@@ -50,6 +53,7 @@ const Login = () => {
   <input type="text" className="input border border-none" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value) } />
   <p className="text-red-500">{error}</p>
   <button className="btn btn-active mt-4" onClick={handleLogin}>Login</button>
+  <h3 onClick={()=> navigate("/signup")} className='text-center cursor-pointer mt-2 '>Don't Hava an Accound? SignUp Here</h3>
 </fieldset> 
     </div>
   )

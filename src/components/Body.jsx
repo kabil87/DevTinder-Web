@@ -11,10 +11,11 @@ const Body = () => {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const user =  useSelector((store) => store.user);
+  const user =  useSelector((store) => store?.user);
 
   const fetchUser = async () => {
     if (user) return;
+    console.log("found user");
     
     try{
       const res = await axios.get(BASE_URL+"/profile/view",{withCredentials:true});
@@ -23,7 +24,9 @@ const Body = () => {
     catch(err){
       console.log(err);
       
-      if(err.status === 401){
+      if(err.response.status === 401){
+        console.log("login calling");
+        
         navigate('/login')
       }
     }
@@ -35,14 +38,19 @@ const Body = () => {
   },[])
 
   return (
-    <>
+  <div className="flex flex-col min-h-screen">
 
     <Navbar />
-    <Outlet />
+
+    <div className="grow">
+      <Outlet />
+    </div>
+
     <Footer />
 
-    </>
-  )
+  </div>
+)
+
 }
 
 export default Body
