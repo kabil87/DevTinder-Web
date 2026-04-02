@@ -11,7 +11,7 @@ const Profile = () => {
     user &&
     <div className='flex justify-center gap-40 '>
       <EditProfile user={user} />
-      <div>
+      <div className=''>
         <UserCart user={user} />
       </div>
     </div>
