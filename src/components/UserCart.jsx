@@ -22,30 +22,36 @@ const UserCart = ({user}) => {
     }
 
   return (
-    <div className='flex justify-center mt-4 z-30 h-103'>
+    <div className='flex justify-center mt-4 z-30'>
+  <div className="card bg-base-300 w-80 shadow-sm">
 
-        <div className="card bg-base-300 w-80 shadow-sm">
-  <figure>
-    <img
-    className='mt-10'
-      src={photoUrl}
-      alt="photo" />
-  </figure>
-  <div className="card-body">
-    <h2 className="card-title">{firstName +" "+ lastName}</h2>
-    {age && gender &&<p>{age+" "+gender}</p>}
-    <p>{description}</p>
-    <div className="card-actions justify-center gap-10">
+    <figure className="h-64 overflow-hidden">
+      <img
+        className="w-full h-full object-cover"
+        src={photoUrl}
+        alt="photo"
+      />
+    </figure>
 
-    <button onClick={()=>handleFeed("ignored",_id)} className="btn btn-primary">Ignore</button>
-      <button onClick={()=>handleFeed("interested",_id)} className="btn btn-secondary">Interested</button>
+    <div className="card-body">
+      <h2 className="card-title">{firstName + " " + lastName}</h2>
+
+      {age && gender && <p>{age + " " + gender}</p>}
+
+      <p>{description}</p>
+
+      <div className="card-actions justify-center gap-10">
+        <button onClick={() => handleFeed("ignored", _id)} className="btn btn-primary">
+          Ignore
+        </button>
+        <button onClick={() => handleFeed("interested", _id)} className="btn btn-secondary">
+          Interested
+        </button>
+      </div>
     </div>
+
   </div>
 </div>
-
-
-      
-    </div>
   )
 }
 
