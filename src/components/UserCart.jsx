@@ -22,12 +22,12 @@ const UserCart = ({user}) => {
     }
 
   return (
-    <div className='flex justify-center mt-4 z-30 h-116'>
+    <div className='flex justify-center mt-4 z-30 h-103'>
 
         <div className="card bg-base-300 w-80 shadow-sm">
   <figure>
     <img
-    className=''
+    className='mt-10'
       src={photoUrl}
       alt="photo" />
   </figure>

@@ -9,6 +9,7 @@ const SignUp = () => {
 
   const [firstName,setFirstName] = useState("");
   const [lastName,setLastName] = useState("");
+  const [showError,setShowError] = useState(false);
   const [email,setEmail] = useState("");
   const [password,setPassword] = useState("");
 
@@ -22,7 +23,10 @@ const SignUp = () => {
       
 
     }
-    catch(err){console.log(err);
+    catch(err){
+      if(err.response.status === 400){
+        setShowError(true);
+      }
     }
   }
 
@@ -43,6 +47,10 @@ const SignUp = () => {
 
   <label className="label">Password</label>
   <input type="password" className="input" placeholder="Password" value={password} onChange={(e)=>setPassword(e.target.value)} />
+
+  {
+    showError && <p className='text-red-500'>Please Provide Valid Details...</p>
+  }
 
   <button onClick={handleSignUp} className="btn btn-neutral mt-4">Sign Up</button>
 
